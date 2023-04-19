@@ -6,10 +6,13 @@
 }
 
 <div class="container my-5">
-
-    <form class="form-sample" asp-action="Create" >
+    <span class="text-danger">@ViewBag.error</span>
+    <form class="form-sample" asp-action="Create"  >
 
         <input type="text" class="form-control" id="customFile" asp-for="Name"/>   @*Bu name Category nin ichinde olan name propertisidi*@
+
+        <span class="text-danger" asp-validation-for="Name"></span>  @*bu span inputun altinda errorun yazilmasi uchundur. Name inputunun yaninda*@
+        @*span name e ne validation elesek gelib onu spanin ichinde yazdiracaq*@
         <div class="buttons my-3">
            <button type="submit" class="btn btn-primary mr-2">Submit</button>
            <a class="btn btn-light" asp-action="Index">Cancel</a>
